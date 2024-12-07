@@ -1,0 +1,50 @@
+
+    .videotitle{
+        font-size: 18px;
+        font-family: Nunito;
+        font-weight: bold;
+        width: 300px;
+        margin: 0px;
+        margin-bottom: 0px;
+        line-height: 24px;
+    }
+    .views-timestamp{
+        font-family: Nunito; 
+        opacity: 80%;
+        margin-top: 8px;
+        font-size: 15px
+    }
+
+    .creator-name{
+        font-family: Nunito; 
+        opacity: 80%;
+        margin-top: 8px;
+        font-size: 15px
+    }
+
+    .video-description{
+        font-family: Nunito; 
+        opacity: 80%;
+        margin-top: 8px;
+        width: 300px;
+        line-height: 22px;
+        font-size: 15px;
+        margin-bottom: 100px
+    }
+
+    .apple-text{
+        background-color: red;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 35px;
+        padding-right: 35px;
+        width: 450px;
+        font-family: Nunito;
+        font-size: 14px;
+        color: white;
+        text-align: center;
+    }
+
+    span:hover{
+        text-decoration: underline;
+    }

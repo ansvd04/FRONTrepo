@@ -1,0 +1,12 @@
+body {
+    background-color:bisque
+}
+
+#box {
+    height: 150px;
+    width: 100px;
+    background-color:honeydew;
+    color: black;
+    padding: 1.2%;
+    border: 2px solid blue;
+}

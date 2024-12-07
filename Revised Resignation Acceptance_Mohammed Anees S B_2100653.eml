@@ -1,0 +1,420 @@
+Delivered-To: anees04mohammed@gmail.com
+Received: by 2002:a17:906:15d7:b0:a9a:48f:8503 with SMTP id l23csp3162939ejd;
+        Mon, 18 Nov 2024 20:48:41 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFk0pJqekLGIi7THyMw88Caw4n7GCoMJw7h754Sgd6lrRauUEjyE9VwrQZJn4NrKos6h+3X
+X-Received: by 2002:a17:902:c94a:b0:212:3f13:d4bc with SMTP id d9443c01a7336-2124d1136dcmr21064245ad.27.1731991721339;
+        Mon, 18 Nov 2024 20:48:41 -0800 (PST)
+Return-Path: <prvs=04677949f=vasudha.nadavapalli@tcs.com>
+Received: from inblrg02.tcs.com (inblrg02.tcs.com. [121.242.48.116])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-7f8c1e031f9si10198556a12.785.2024.11.18.20.48.40
+        for <anees04mohammed@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Mon, 18 Nov 2024 20:48:41 -0800 (PST)
+Received-SPF: pass (google.com: domain of prvs=04677949f=vasudha.nadavapalli@tcs.com designates 121.242.48.116 as permitted sender) client-ip=121.242.48.116;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tcs.com header.s=default2048 header.b=ZbgDybCQ;
+       arc=fail (body hash mismatch);
+       spf=pass (google.com: domain of prvs=04677949f=vasudha.nadavapalli@tcs.com designates 121.242.48.116 as permitted sender) smtp.mailfrom="prvs=04677949f=vasudha.nadavapalli@tcs.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tcs.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tcs.com; i=@tcs.com; q=dns/txt; s=default2048;
+  t=1731991721; x=1763527721;
+  h=from:to:cc:date:message-id:mime-version:subject;
+  bh=9C7qqkMF9AoYjrMnHJVo/AUcbl57WqSMAUQ/1XQlkgU=;
+  b=ZbgDybCQnOgwEYJfgD182rYbrledS4ApVe8RrNKq6umEWLNEXc6D8EkB
+   F/7BenVTI94W1uZsIZNwV0B6JcwcI5DHPUFlteKu4P5hPwzW0xMJeP67u
+   f0dz5bMTV5Ie9sblgZh+WkrVtlhvCpxW88t5HqvXxPYMFnCv7iM8sS3yY
+   IlopGdPb/ZKF0ru4CLadvjEZv6FB4MBN6IzuiW/VunZHXnq4oMnK0resr
+   QnNXlQjSyXPSzUQth1XGq4Ipk0gXn43179MCM1YL4gkumRCs4wqr8EbED
+   XKzHrDATUMfYU8CIZsAP26HHhNTLoPjFM4botmzLqBS/nTbKHr3uPs9iq
+   A==;
+X-CSE-ConnectionGUID: 6D9pdKa5QSakPnZiVPfyCg==
+X-CSE-MsgGUID: Rkqa5zSQSMCgaHF/rB0xSg==
+Allowed: False
+X-ThreatScanner-Verdict: Negative
+X-IPAS-Result: =?us-ascii?q?A2DPDAAClBdn/xhEqgpaHAEBATwBAQQEAQECAQEHAQEVC?=
+ =?us-ascii?q?YFKAoE/gQN7AoFklkOYO4VwgWoPAQEBAQEBAQEBCAEUMAQBAYUHAookJzcGD?=
+ =?us-ascii?q?gECBAEBAQEDAgMBAQEBAQEBAQENAQEGAQEBAQEBBgUBgSCFNVOCYgGDeisGR?=
+ =?us-ascii?q?AgSARUkAQECCjgUEgEEDgUIgnqCHEiuNTYBAQF2YSAzgQGCGATcF4FsgUgBh?=
+ =?us-ascii?q?WmCYgEqgTKEDAGDSIEvNoFVRIFXgjCCSIIyBRgBASI0JgSDNYIvBIERgiODM?=
+ =?us-ascii?q?YUsgiKCSwlZBwQFFYNZXIErbT5iOQyBaW9gJYIUgTuEWyVuhAaDLU6BA4hyg?=
+ =?us-ascii?q?TIVIgMmMyETAVUTFwsJBYk1ggOBIymBa4QQhSWBZwlhiU6BPoFZgzlKg2iBT?=
+ =?us-ascii?q?0c/OYIWak43Ag0CN4IkgQCCUYYqHUADCxshMT01FBsFBIE1ql4EghNGggV0G?=
+ =?us-ascii?q?jcGBwNCNChYBBkIAS0BEhYLMZJSAQueFZRaJQ8HK4NygWONCY9Lgz4XhAWNA?=
+ =?us-ascii?q?ZlGLodsK5Ayo20FhQQCBAIEBQIPCIF9gX9wgzdSgQDaEHg7AgcLAQEDCYZIh?=
+ =?us-ascii?q?VAygUkBAQ?=
+IronPort-PHdr: A9a23:4VbNkhCSasSASGXB6ByJUyQUtUQY04WdBeb1wqQuh78GSKm/5ZOqZ
+ BWZua41ygWUDM6Cs6wMotGVmp6jcFRI2YyGvnEGfc4EfD4+ouJSsioeReWoMgnFFsPsdDEwB
+ 89YVVVorDmROElRH9viNRWJ+iXhpTEdFQ/iOgVrO+/7BpDdj9it1+C15pbffxhEiCCybL58M
+ Bm6txvdu8kSjIdtN6o91hrEqWZUdupLwm9lOV2ckxHg68mq4ZVt6T5Qu/Uv985BVaX1YaE1R
+ qFGATolLm44+tTluQHMQwWX6XQQS3sbnBVVDQTd4x70Qpn+si3htupgwyaaJtH5Tao1WTu58
+ ahmTgLjhTodOD449GHXjdFwjL5erRm8qRFz35LYbYeIP/dlYKjTYc0VSnZAXsZJVixOHIW8b
+ 5cUD+EcOepUtpTxq0cSoRe7AwSnGeHhxSJShnLu3aM0zfosHxza3AIuHNwBrHvboc7vO6sOT
+ ey41rXEwSndY/5QxDzz6JLIchckofyUUr19bdffxkchGQ3HklibtJTrMi+b2OkRvGeW8/BuW
+ P6phWAhqA96vz+ixtk2hYnSm4Ia11DE+j9jzIYzP9K3VVR0YcC+H5tIrS6aM492QsI5TmF0p
+ Ck60acKtoK8fCgP0ZkqwQPUZPObfYaS+B3jSPqRLilihHJjYL+ymwi//0aux+D8Wce4zVlHo
+ CRLn9XRuX0A2Bje58mFR/Z9/kqs2TWC2Q/c5OxZJU06lbbXJZEuz7MylpQfr0bOEynrk0v1l
+ K+bblgo9vSy5+j6YLjquoWQOo53hw3kLKgjldSzDfo5PwQSUWWW/Pmw2KHn8ED4RbhFkuE6n
+ rTcvZ/EJ8kWo6u0Dg5T340+8RiwFS2m384dnXQfKVJFfw+IgJbxNlHVJfD4Ee+/g1OxkDd33
+ /zGPqPuApHKLnXbk7nvZahw5UxExgQ9y95R/ZVaBK8dLf/zQkPxtdrYAQElMwGs3urrFM9x2
+ p4cVG6TGKOUMaDfvUWW6u8gO+WMYZUauDf5K/gr/f7uino5lEcDfaazxpsXdW23HvR8LEmDZ
+ 3rjmMoOHn0UvgUkVOzlklmCUTpSZ3upQ6Iz+io7BJi6AofEQ4ChmKaB0zujHp1KemBGDUiBH
+ m3ud4qaRfgMcz6eL8BkkjwDVbiuUYoh1RSwuwDn0LdnIe/U9TcZtZLnztR6++rTlRQq+TxyF
+ MuSy3uNQH1snmMUWz8227hyrVFlxlie0qh4gvlYGMRL6f1GXAg0K4LSwvB8BdzqRw3Be82GS
+ Ey6Tdi+GT8/V8o/zdAWb0ZmA9WigAjO0TKzDbENmLKHHIc08rrS33fpJ8Zy1XLG1K45glc+W
+ 8VBLWKo1eZD8F36AYPEiA28m+7+fKIR0TWVqGKEzWOLuUxUeAF1WKTBG3sYYx2Fg87+4xb8Z
+ oSTJZQOei1o5ee8A5NjTvnIxQFYTez+NNTXJWS4l26uDA6BwreNRJbhYCMW2yCLWxtMqBwa4
+ XvTbVt2PSymuW+LSWU2TToHK2vg8uh7/XW8SEJ8jwSHdFZo2Lf9/BkJzeedRPUe0vNh2m8hp
+ jx4EUz704fQDNyN9AZkdb9XNNU65loP3GnFtgt7a5qnKa0qhlMXfwlt+U300BAiFo5b18Mtq
+ SBC8Q==
+IronPort-Data: A9a23:zVJFLqyYBQPmV31Jd096t+dmxyrEfRIJ4+MujC+fZmUNrF6WrkUAz
+ DEXUT/SPauINzP1e9AjaIi+/UIOsZ+DyNNlSwU/qykzEn9A8ZWZXtrEIB36bnPCc8OZEEs7s
+ swTNoGadpBrZ3KN/R3F3poNDZVfOQNkYpKmVYYo7wgoHVcMpB8J0E8lxqhgxNY13LBVOivV0
+ fvqucrTJVS57DB9N2MQ+sqrpQhm1BjIkGpwUmcWO7YS5Tcyq1FPVMhDfPnrdSOiKmVpNrfSq
+ 9jrnenRElzxok9F5uONyt7TbkAMS7jOCgmC4lI+c7SimBVLuhsp2a89MvcGAW8P49let40ZJ
+ H1l7PRceC9xVkH+sL11vypwT0mSCZZ7FIrvehBThyAxI3ruKBMAy902ZK0/0BZxFuxfWQmi/
+ tRAQNwBg4zqa++emNqGpudQassLcuW6JI88syxZ9jjaNfAUQK77TbTh6ooNtNswrpgm8ff2R
+ uwySRxDSCzlXzQSUrsVIMtm2r733j+hI3sC9Dp5poJui4TX5BJ4y6XhMNOTfNWGTNtchk+co
+ mPu42/iRBodMbRzzBLYqir82rKSxnqTtIQ6Lr6h/6N4u2So40ccAT04EkGR+emChRvrMz5YA
+ wlOksY0loA78kGmVYGhWhq4qXuBsxI0VN9ZEul84waIopc4+C7AXi5dEWYHNoxg7pNeqSEW6
+ 2JlVujBXVRH2IB5g1rEnltIhVte4RQoEFI=
+IronPort-HdrOrdr: A9a23:kfPV+Kzo6FPl9IBQHOM2KrPxCugkLtp133Aq2lEZdPULSKylfp
+ GV/cjziyWbtN9IYgBcpTiBUJPwJk80hqQFnbX5XI3SETUO11HYV72KgbGSpgEIeBeOutK1t5
+ 0QCZSWYeeYZTMR4KqUkWrIcerIq+P3lpxA8N2ut0uFOjsaEp2IgT0JbjqzIwlTfk1rFJA5HJ
+ 2T6o5uoCehQ20eaoCWF2QIRO/KovzMjdbDbQQdDxAqxQGShXfwgYSKXSSw71M7aXdi0L0i+W
+ /Kn0jQ4biiieiyzlvxxnLe9JNfnfrm059mCNaXgsYYBz3wgkKDZZhnWZeFoDcpydvfp2oCoZ
+ 3pmVMNLs5z43TeciWeuh32wTTt1z4o9jvL1UKYqWGLm725eBsKT+56wa5JeBrQ7EQt+Ptm1r
+ hQ4m6fv51LSTvdgSXG4cTSXR0CrDv1nZNiq59Rs5Vsa/paVFZjl/1awKqTKuZGIMvO0vFkLA
+ CpNrCb2B8ZSyLCU5mThBgR/DXlZAVMIv7BeDlThiReuwImxEyQDCMjtZcidg1rzuNhd3Eejd
+ 60bpiB0Np1P54rhWcUPpZafSNyYla9Hi4l9wqpUAra/eg8SgLwQ5Kb2sRF2Mi6PJMP15c8g5
+ LHTRdRsnMzYVvnDYmU0IRM6Q2lehT0Yd3B8LAp23FCgMy0eJP7dSmYDFw+mcqppPsSRsXdRv
+ aoIZpTR/vuN3HnF4pF1xD3H8A6EwhVbOQF/tIgH16eqMPCLYPn8uTdbfbIPbLoVTIpQHn2DH
+ cPVCX6YM9A8keoUHnlhwW5YQKnRmXvuZZrVKTK9ekaz4YAcoVKrwgOkFy8otqGLDVT25ZGC3
+ eW4ImX5p9TiVPGiFogtV8ZSSa1Jnwlkondbw==
+X-Talos-CUID: =?us-ascii?q?9a23=3A6FeuXWhoCQsN/bj4OTPGT9VsZjJuLFGM1HvzKhK?=
+ =?us-ascii?q?BMm9qcLunSGGo9rJPnJ87?=
+X-Talos-MUID: 9a23:DcBC2QRipdmh1fDhRXTWhyhradVT2p+LI08EsbtBoePcJRd/bmI=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-AV: E=Sophos;i="6.11,223,1725301800"; 
+   d="scan'208,217";a="500845531"
+Subject: Revised Resignation Acceptance_Mohammed Anees S B_2100653
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=GVIHMUqTV/hXAXAF0dCjhHQClgWdryJrXjqljCq5VJxFItkP+wFK2Plac7wvD6p1eAjAl03uvRg4JRNqDbeDfxZcw/Or+DtBn5oEcOtA7iA4AAAdW/iaXt9f8a1Tyzzhr3GsSFyhooJWuDe8dtj0116uL002pqRt/pUlbHnlPQgzIZHfYrd1GMW6vlzFaSihUzuHOZExjl/ycVixK5wk7u5d68SKUetRB3hYMxhQo8RGS4rgV9kBnzxpDWaFk7oCYz0+RKb7wwvdeDGYZ+sQvXY92J9onfk/j+UEEojV3/ZX8XWNT6UBScdd0AW7eVB5greMgUm/4Mn9V0/X4dJQiQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=d2oZ1jVmpx5rEwMoGfHIVm8Oy3MS5GyFWp4WsNlwXb8=;
+ b=pRvk9s4qzMhbxvtgPYJ9TI5n/tavqN/EJN0jWNF2fRoWdd6+wjBkjPY9irdOweB0FppbGdnd5yxGKKZGutugGADAe0f74TVIabDHiVSArHAExTDjdynGUhadQP0a9be1HFarvPLJyInAGeEo2MSPnibGGMF2IN39RDLtlIR/X+FrdqV066e8NElzh5S3xXoLZ2/nMJ1iXT1iodB8W/VrxAcC8sdf9clHcWTyC+NDJgfu/xncIMV4w17UJzKSZnzYfK7/s7g601OiaLAvDSL6nRF6lwN7dSF5yzy59ciVJy/hh6Vhb3B0u0xTEAp+zfDXe6DYfrbZvkMILrXjIScIvQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=tcs.com; dmarc=pass action=none header.from=tcs.com; dkim=pass
+ header.d=tcs.com; arc=none
+From: VASUDHA NADAVAPALLI <vasudha.nadavapalli@tcs.com>
+To: Anees Md <anees04mohammed@gmail.com>
+CC: NISCHALA PULIJALA <nischala.pulijala@tcs.com>, Oindrila Banerjee
+	<banerjee.oindrila@tcs.com>, Imroz Mohammed <abdul.mateen1@tcs.com>
+Thread-Topic: #personal# Revised Resignation Acceptance_Mohammed Anees S
+ B_2100653
+Thread-Index: Ads6PdSo2dIYaI19Ta+eKn7Z+sldNQ==
+Date: Tue, 19 Nov 2024 04:48:35 +0000
+Message-ID: <PN0P287MB0311B18F7C35AD928B9D5D0EE6202@PN0P287MB0311.INDP287.PROD.OUTLOOK.COM>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_1aabfc0d-38d5-4801-9e82-1226fde31efa_ActionId=77ea430f-3c12-425e-a0dc-2bf9eb73724b;MSIP_Label_1aabfc0d-38d5-4801-9e82-1226fde31efa_ContentBits=0;MSIP_Label_1aabfc0d-38d5-4801-9e82-1226fde31efa_Enabled=true;MSIP_Label_1aabfc0d-38d5-4801-9e82-1226fde31efa_Method=Standard;MSIP_Label_1aabfc0d-38d5-4801-9e82-1226fde31efa_Name=IRM_test_300622002_ul;MSIP_Label_1aabfc0d-38d5-4801-9e82-1226fde31efa_SetDate=2024-11-19T04:43:50Z;MSIP_Label_1aabfc0d-38d5-4801-9e82-1226fde31efa_SiteId=404b1967-6507-45ab-8a6d-7374a3f478be;
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=tcs.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PN0P287MB0311:EE_|MA0P287MB0566:EE_
+x-ms-office365-filtering-correlation-id: ea31d0c7-748d-4ddb-747e-08dd08556d39
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|1800799024|366016|8096899003|38070700018;
+x-microsoft-antispam-message-info: =?us-ascii?Q?/keY+ZDlUSwoRFNriUT5HJ7yKoXG6T6t0+MjR11l2UDDPFPg+d7lm/lLWNCH?=
+ =?us-ascii?Q?D3ASsZiDJDrL0ePKKx7zx2MFjJxhRZakgC5vDh2GMhfAalHvDZrFUGokyOQ7?=
+ =?us-ascii?Q?t0xX9oyScUQNPvMA9/s3Sb0dCft6qBvEBSucAwTxHF+vzSkyK+b01Fx9txRu?=
+ =?us-ascii?Q?VLwF1DI7iajIr1ju6+McvTWq6g4nnhM2jkZkzYi4xLYOb9bd4F4S7g01x0Hp?=
+ =?us-ascii?Q?1TnERrVqbcHIFCjwgPm6RLNOfynDFMSkf6JSbjVxUQrpX5dxdDwm0izNfanx?=
+ =?us-ascii?Q?xRbMlY7WHDG1io/lmddvJc+KsIiBTK9vtMicY3/xuySRFwMM4mstc7nTIEjC?=
+ =?us-ascii?Q?msW7PdLfzzEKP2+VSMc02B80tQq6v3AxdBA/IQ6k18yLJ+dUMlUwyy+bAZLC?=
+ =?us-ascii?Q?oPbJNPQ11+q9qvP2gMeWIEBTJdtc1zsk+4uTy7IncV9ojNtyZdhinohw7AJM?=
+ =?us-ascii?Q?HRaGz477xAWJAQNvCG3H+vOoEvIyVR2XvB0OvbOW9BE8SL1AI2r+OrlTn6+e?=
+ =?us-ascii?Q?AsyWYNau2cNhQ2Qrk04QS5M/Gjgm9bSEEfwGpWOe/PjvKdgS2FHqpsFBkt2B?=
+ =?us-ascii?Q?LD79mtgtLboOD36vtDkHRP+TqMR9INfjLsgOpiLcwmFTKBz6vR01Tuz9MfGc?=
+ =?us-ascii?Q?G4BOe6Q+59FkZHF8ha/aK5yRreroQX/LpCrGWikFRk06yi/9F/FnptJ0XVV5?=
+ =?us-ascii?Q?DXK6E9uaRa2W++9OChdItkDVOWwpCTY+KVPLTbOQYivk/J8oBOReIi7zSokV?=
+ =?us-ascii?Q?yzGKCn6VhKECW9QlTaTUkC3jr3WiEgq0t1Hm6qg5WdSBJtjmD2gu1hUwMfSq?=
+ =?us-ascii?Q?z5FRpJWwEpZKn1DsOPjG0aC2kkTb6aAVZytRqtVk61pgKBP+evFlOzjrKaVt?=
+ =?us-ascii?Q?KSykXmw6ro8iflOdIzZojTcz3RnIhH+A+RNiRzr7XCz2RmXVtzJKeepJMMVU?=
+ =?us-ascii?Q?kkue17Fk5hKisXYk8KxaOmRPRfNiF9wTBf3Ec13AOhTCgJTX6Prm24sy04lz?=
+ =?us-ascii?Q?LVgZve1U6V74ukaDZz2NhUr5pWdMVlRGEkJMNk6xazOymcAvQip3KjHTIPq/?=
+ =?us-ascii?Q?+cK+i8Qz3MxUV4rht+P/OOK3PrCHnG312cUUUY5I4BZFu7ZFH8b6bN8+8wqG?=
+ =?us-ascii?Q?PfEd670grLGZyUALqO5951HOsd7uueyzlR0aWUwVgg1fIh2gm8qJRpyYdrMh?=
+ =?us-ascii?Q?msBaM2n8euyw7hirKSXDeGSrqRAaTjaQkpe+0nOUOm47sc2/QSrRsXwrxtd2?=
+ =?us-ascii?Q?CHvpMN83x4Fs+lLC2ICJ/zw2RF+xRkj/pl+TMlMNSwWcoH83z2TTAh/2ONjk?=
+ =?us-ascii?Q?iwwkrSaxQB3/oMUlScB2bD2CGuqnNXJ2ovozwLZLeOdVFT3qoZsC8B6Hzpha?=
+ =?us-ascii?Q?wlm/yik=3D?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PN0P287MB0311.INDP287.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(8096899003)(38070700018);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?8PMm5hadN0QsPqk0fc28uT2FQjf6Z47ndmT867c9/U4C3nfTWsga3KtQfjEc?=
+ =?us-ascii?Q?TqTCwEFfN7xLSbrTumZ6nTuOGjxKefPsVL/mrN7cEpk6TZsMoVRxGtcl3xLf?=
+ =?us-ascii?Q?gUh/SLa29HZOLs+VPwRCFPwbfDCox0ivy7zHM/DMxaQNYrE4g8JJYMSFYGAL?=
+ =?us-ascii?Q?rvFN4s1x5rOTiWar53Q9pzO+k9CMrD/qaCGRjnGTZuL3vKZQguHOkZVBrKmj?=
+ =?us-ascii?Q?Q+2jijj2IX6VnCFKwaGQTHFntaWSYvw5oS83HqysdxvRn67/MU1kFjSmoIt/?=
+ =?us-ascii?Q?h5TGJa83J9dXj/E6wgAMprVmh45rjTxEPyEpbr5J8ynI+CnvWSshnqwfUOxp?=
+ =?us-ascii?Q?K47/fQj9DbVA4GTu71Hcmdoz2cto86h93+pSbxXXx5+6yzxiKxhq5w9sEGwF?=
+ =?us-ascii?Q?xxPiY5b/qmZ2dcAnTofks9i4p6a8JAHDoODGRP5n0URmZnDzOg6Tq7JMWS4y?=
+ =?us-ascii?Q?FC8qkNYJnbXy8xBghxk19/k8obBTzGBDmTsEgsqgJW98X+frAN5FDU/uqLiK?=
+ =?us-ascii?Q?d1hPfkI7h59ZfsheaHH11ZDZz/7CpvTx/iYtoWSa/SGMTSV8brCeV4vGGzh8?=
+ =?us-ascii?Q?jKdoOu/KhhIrsT3ZqABAaKEaqlllcgfgJ+KznK8rkj+fIubHmUSAsFeSTR7E?=
+ =?us-ascii?Q?CC+5Yl83UU5IG5ZkGAgR65iB0V66mJhjV+qfXQBliVclgF6DlqW0xLB08hWb?=
+ =?us-ascii?Q?OOEV+yZmNcmOK5ihzFvxeb+ueVuT25M6uGHFWoQVje4P6SW4xdeZHzDHvLxN?=
+ =?us-ascii?Q?GBhME0n3oP3IOg+RaGFIM1VTQI/NfG/e35HB6UjqluqcfRQXhSLloEQXwaVp?=
+ =?us-ascii?Q?JcdrADgY3NXM0X2orlk7C1ptntvWbybe4DsfqSUv97PSR4tl4SVA1r56Jwm/?=
+ =?us-ascii?Q?Z8H9+oWJ3ji2EY4V2XOrr23gyCBNmQ9t9C4neuh3jBBWl64yoV/qWXQ3KbF3?=
+ =?us-ascii?Q?tf0YbE5bsCckcuwH6yhZIBI1r4SRkd+a8aLHH0WgCeYKCOaR21vIPHj/O1qW?=
+ =?us-ascii?Q?Ln1N6JRE3PDDt2aFGHkF2MHz0t5WtGWHRisdDXLETznAPsVcfVNwDkc2e15O?=
+ =?us-ascii?Q?JtHQ7qaxQgA9Kr8QVFA7uVNMtipLpgcFF2lQr73UySV1aHwe4Zfqaxz4eQfh?=
+ =?us-ascii?Q?LK0d26LXxz9eydUOwXbbIuyRxnJN4CzYmM3h48St9xspY3tMJR1C3mKEmSoD?=
+ =?us-ascii?Q?EEjnkxOOdp+WbJkjolK8NPGlOfIicmQYi6Hg9IWO4IVMa9kJKjxbM6ca/BSU?=
+ =?us-ascii?Q?KfiWiWj87e+n9rYbGy4a+kexU+pMEN1wz1yV7t56lMVT8cRTP5iV0EHec7vl?=
+ =?us-ascii?Q?XR5S9bSctviMpqRYHZ70mNhPn2Z4FSHF3sZko+ln+VJK/9qKd+GsXAM65qZl?=
+ =?us-ascii?Q?txcd7ow4ILil9X20mDwL7GuTFcy2oZ3I1Bv3T+vzcysVnRH4oOqQKFes5LKe?=
+ =?us-ascii?Q?1FejW0lslXrioYi5WSJv8neVJJW2KqSoPww/XIAbYrTq7QrI+gShkqs0xm2/?=
+ =?us-ascii?Q?siOKALFLDW5ps2Fd+mv/wUqNa3lor35cgdQwAO3/ILcmhAaV/Al7cUpWpjbQ?=
+ =?us-ascii?Q?Mh7H3Ep3hHQqVvkXnQU=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_PN0P287MB0311B18F7C35AD928B9D5D0EE6202PN0P287MB0311INDP_"
+MIME-Version: 1.0
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: EisjjoPc0WSUPdCeETsj9RFAw2MoYWbUMFoHbv8terToKU9w3lbWXVhalH7uoJHM79XVhUQPeG98zWbLdqKHdclrgk9BmodDbqsM7n/RlG1AW0U2m3a8Y6O6+d747prHkHZEDKt8WN89HE1Vl+Q0t5LDetnf//3m74mO4cc1yZD3sAjRpV0UTlLCvzY49+xiR9rqOtDy6oI15N8RkIgxAJm1tdBBiHp3rMzwHaTBuTOgZZ59nOXl/wqUac6yTVWYo89gZE3OLMBi4fwEyhsIPhZhwiHyqFvjL6uJ74VFL7I2hnqbkP8YroowuPPMrOI6gYqkWX0dQrAuZP4e00FKyL8Pt4jhZ6ia3HBCjiGXjgXJ5KfyOCrflMbBQ0Ybo2BVDggj95UpnzOU3/2DP/x2K0lbYERYCWIH+vskd7dG1ZY5VkeLK6J/E7B3y18t3oMUD4bAaCPrCpcQFoiCuYaZt+K2vcC+rUGCDVeFc39Sw/8ANYlYXdyLk7jMb5kh9T4yh263paqMxR9O7TqSYUi8EBRi0vyGX3BK74n3RViXD2Zgp6WB20x6HufsQAoAqxqU6eXVRyyTq6FwaE5sK/HqD/xv5TYxLPxYTebaUx5zNwlQ3rOmu2s4qGVE2wN7dAPXOiRxSdXSY181mbql3d3vzQ==
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PN0P287MB0311.INDP287.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: ea31d0c7-748d-4ddb-747e-08dd08556d39
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Nov 2024 04:48:35.3948
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 404b1967-6507-45ab-8a6d-7374a3f478be
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 5zlPBjm3DZAULVZILJX40PcFPCNRhR3DhkgZJPi0B8q56yWwqJywDDjWQgiEzUh5
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MA0P287MB0566
+X-TM-AS-Product-Ver: SMEX-14.0.0.3092-9.0.1002-28792.007
+X-TM-AS-Result: No-10--19.599200-8.000000
+X-TMASE-MatchedRID: LeWR9CMFTuN+blH4Tb5ys510bFzFUNG3lHLUcNM85dqBAXl9LkPp6W8D
+	pumF3vqHOVZsc4I0ZFa1wK5T6oPWYfUWMvmk6jMFnDMS6U2Jkuo6En2bnefhoI0nZyQtGDZRNxZ
+	a4N1om3qfGoN2Jp3+C80XtYxjZtjKM6k9F6I0JMB/UZccT1za1uWzJnTmLPxv3MgU/xj52EmBE9
+	XLgD84RmCdR+3KkS+rF5cXjwszASxHW+94FA8JFysIuzCLc2mN6r3HCixfuKcc4ri4RJV/1W/RD
+	AZTdSI3D+Gk9XRs2AGD28NNt7xCyIW00NeRX+Br30kDaWZBE1TQTttTsZbKLweDfW9m9jreupOi
+	svffcFAgXKLHLyCfrOG8ILCMur8DDlWhxTgIXOoCOoDG5aR1MaNPTD9MknDoB5eipYRX2940Yn+
+	yUq2DqudeVpan8KF89Q2iiB+zYeqwquY0kEgdZ+3o8zgrnCa31ViV5EWK7TubKItl61J/yc8943
+	oc3p3s50uNBT3t7RbwMUUgHNDhDfb/jTTlUnX/s0ZCSH3j6wqdsHuG2CPOO/3sAoObEf4g05BLy
+	Ny3Bk0zcKm+m13k+Q==
+X-TM-AS-User-Approved-Sender: No
+X-TM-AS-User-Blocked-Sender: No
+X-TMASE-Result: 10--19.599200-8.000000
+X-TMASE-Version: SMEX-14.0.0.3092-9.0.1002-28792.007
+X-TM-SNTS-SMTP: 6325835C484EA6E231932AE7DB762C0EBB3C4DC2A17000B733929449C8C2C1F22000:8
+X-OriginatorOrg: TCS.COM
+
+--_000_PN0P287MB0311B18F7C35AD928B9D5D0EE6202PN0P287MB0311INDP_
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+TCS Confidential
+
+
+Dear Mohammed Anees,
+
+This is with reference to your resignation dated 8th  Nov 2024
+
+We would like to inform you that we are in receipt of your resignation, and=
+ you would be released from the services of the company effective close of =
+business hours on 18th Nov 2024
+We also remind you of the obligations of the confidentiality and non-disclo=
+sure agreement which you had signed during the course of your employment wi=
+th the Company. You are required to bestow the same degree of commitment in=
+ protecting the Intellectual Property of the company as you have agreed to =
+uphold as per the terms of the confidentiality and non-disclosure agreement=
+. You will be required to ensure that the trade secrets, confidential and t=
+he intellectual property that were developed when you were in the employmen=
+t of the company continue to be protected and are not compromised in any wa=
+y.
+Please note that you are also required to uphold and abide by the security =
+policy and processes of the Company throughout your tenure. Kindly ensure t=
+hat the interests of the company is not compromised in any manner.
+You are requested to connect with Imroz Mohammed abdul.mateen1@tcs.comfor<m=
+ailto:abdul.mateen1@tcs.comfor> completing your separation formalities.
+You can also refer to the Separation Kit which will give you separation pro=
+cess related details as well information that you may require post separati=
+on from the organization.
+Ultimatix -> Employee Services -> Polices -> HR Policy Hub -> HR Processes =
+-> Separation -> TCS India Policy - Separation -> For detailed View on the =
+related documents please Click Here -> TCS India Process - Separation Kit
+
+Wish you success in your future endeavors.
+
+Best Regards,
+Vasudha N
+Human Resources Business Partner
+Tech SS- 6
+Mail ID: vasudha.nadavapalli@tcs.com<mailto:vasudha.nadavapalli@tcs.com>
+Tata Consultancy Services Ltd.
+
+
+
+=3D=3D=3D=3D=3D-----=3D=3D=3D=3D=3D-----=3D=3D=3D=3D=3D
+Notice: The information contained in this e-mail
+message and/or attachments to it may contain =
+
+confidential or privileged information. If you are =
+
+not the intended recipient, any dissemination, use, =
+
+review, distribution, printing or copying of the =
+
+information contained in this e-mail message =
+
+and/or attachments to it are strictly prohibited. If =
+
+you have received this communication in error, =
+
+please notify us by reply e-mail or telephone and =
+
+immediately and permanently delete the message =
+
+and any attachments. Thank you
+
+
+
+--_000_PN0P287MB0311B18F7C35AD928B9D5D0EE6202PN0P287MB0311INDP_
+Content-Type: text/html; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel" xmlns:m=3D"http://schema=
+s.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html=
+40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ligatures:standardcontextual;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:11.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72" style=3D"word-wrap:=
+break-word">
+<p style=3D"font-family:Calibri;font-size:10pt;color:#000000;margin:5pt;fon=
+t-style:normal;font-weight:normal;text-decoration:none;" align=3D"Left">
+TCS Confidential<br>
+</p>
+<br>
+<div>
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;mso-ligatures:none">=
+<o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal">Dear Mohammed Anees,<o:p></o:p></p>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+<p class=3D"MsoNormal">This is with reference to your resignation dated 8<s=
+up>th</sup> &nbsp;<b>Nov 2024</b><o:p></o:p></p>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+<p class=3D"MsoNormal">We would like to inform you that we are in receipt o=
+f your resignation, and you would be released from the services of the comp=
+any effective close of business hours on
+<b>18<sup>th</sup> Nov 2024</b><o:p></o:p></p>
+<p class=3D"MsoNormal">We also remind you of the obligations of the confide=
+ntiality and non-disclosure agreement which you had signed during the cours=
+e of your employment with the Company. You are required to bestow the same =
+degree of commitment in protecting
+ the Intellectual Property of the company as you have agreed to uphold as p=
+er the terms of the confidentiality and non-disclosure agreement. You will =
+be required to ensure that the trade secrets, confidential and the intellec=
+tual property that were developed
+ when you were in the employment of the company continue to be protected an=
+d are not compromised in any way.<o:p></o:p></p>
+<p class=3D"MsoNormal">Please note that you are also required to uphold and=
+ abide by the security policy and processes of the Company throughout your =
+tenure. Kindly ensure that the interests of the company is not compromised =
+in any manner.<o:p></o:p></p>
+<p class=3D"MsoNormal">You are requested to connect with Imroz Mohammed <a =
+href=3D"mailto:abdul.mateen1@tcs.comfor">
+abdul.mateen1@tcs.comfor</a> completing your separation formalities.<o:p></=
+o:p></p>
+<p class=3D"MsoNormal">You can also refer to the Separation Kit which will =
+give you separation process related details as well information that you ma=
+y require post separation from the organization.<o:p></o:p></p>
+<p class=3D"MsoNormal">Ultimatix -&gt; Employee Services -&gt; Polices -&gt=
+; HR Policy Hub -&gt; HR Processes -&gt; Separation -&gt; TCS India Policy =
+- Separation -&gt; For detailed View on the related documents please Click =
+Here -&gt; TCS India Process - Separation Kit<o:p></o:p></p>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+<p class=3D"MsoNormal">Wish you success in your future endeavors.<o:p></o:p=
+></p>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+<p class=3D"MsoNormal"><b>Best Regards,</b><o:p></o:p></p>
+<p class=3D"MsoNormal">Vasudha N<o:p></o:p></p>
+<p class=3D"MsoNormal">Human Resources Business Partner<o:p></o:p></p>
+<p class=3D"MsoNormal">Tech SS- 6<o:p></o:p></p>
+<p class=3D"MsoNormal">Mail ID: <u><span style=3D"color:#467886"><a href=3D=
+"mailto:vasudha.nadavapalli@tcs.com"><span style=3D"color:#0563C1">vasudha.=
+nadavapalli@tcs.com</span></a></span></u>
+<o:p></o:p></p>
+<p class=3D"MsoNormal">Tata Consultancy Services Ltd.<o:p></o:p></p>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</div>
+<p>=3D=3D=3D=3D=3D-----=3D=3D=3D=3D=3D-----=3D=3D=3D=3D=3D<br>
+Notice: The information contained in this e-mail<br>
+message and/or attachments to it may contain <br>
+confidential or privileged information. If you are <br>
+not the intended recipient, any dissemination, use, <br>
+review, distribution, printing or copying of the <br>
+information contained in this e-mail message <br>
+and/or attachments to it are strictly prohibited. If <br>
+you have received this communication in error, <br>
+please notify us by reply e-mail or telephone and <br>
+immediately and permanently delete the message <br>
+and any attachments. Thank you</p>
+
+<p></p></body>
+</html>
+
+--_000_PN0P287MB0311B18F7C35AD928B9D5D0EE6202PN0P287MB0311INDP_--
+
